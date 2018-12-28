@@ -1,0 +1,37 @@
+Pomocnik EPO
+ 
+Autorem systemu jest Leszek Klich.
+Kontakt: tel. 691050123, https://www.alkor.edu.pl
+
+Funkcje systemu:
+•	Wycofywanie paczek EPO, co umożliwia ich ponowną generację.
+•	Przeglądanie książki nadawczej wraz z wyszukiwaniem po kodzie oraz numerze przesyłki.
+•	Przeglądnie paczek EPO, które zawierają błąd i nie zostały wysłane.
+•	Analiza zawartości paczek EPO pod kątem błędów.
+Licencja:
+Niniejszy system jest darmowy – także do użytku komercyjnego.
+
+Użyte technologie:
+•	Framework CakePHP 3 wersja 3.6.11 Red Velvet. 
+•	Sterownik serwera baz danych - MS SQL Server - biuro podawcze SAWA.
+
+Zakładka EPO
+Po wybraniu zakładki EPO ukazuje się lista paczek EPO, których stan jest nieprawidłowy, bądź niewysłany. Z tego poziomu można podglądnąć przesyłki (Zawartość) lub bezpośrednio wycofać EPO.
+ 
+Wycofaj EPO powoduje wyłącznie paczki i odpięcie od niej przypiętych wysyłek. Przesyłki nie są kasowane, zatem można poprawić błedy i ponownie wygenerować nową paczkę EPO nie używając przy tym MS SQL Management.
+Zawartość epo pokazuje przesyłki, które zostały przypięte do paczki EPO. Dodatkowo system kontroluje poprawność danych i jeśli znajdzie błąd, dodaje dodatkowy wiersz z prawdopodobnym błędem.
+ 
+Z poziomu zawartość można również wycofać przesyłki EPO.
+Zakładka Książka
+Moduł książka służy do wyszukiwania przesyłek po wpisaniu doku lub numeru przesyłki. Po odnalezieniu przesyłki, można wycowć epo, lub przejść do właściwej paczki EPO. Uwaga – system wyszukuje tylko przesyłki niewysłane. Dodatkowo, jeśli przesyłka nie posiada dowiązania do paczki EPO, z prawej strony wyświetli się napis: Brak EPO (zamiast linku do EPO) 
+ 
+Wycofywanie EPO jest zawsze potwierdzane oknem dialogowym, aby wykluczyć przypadkowe usunięcie dowiązań przesyłek do EPO.
+ 
+Instalacja (Windows x64)
+1.	Zainstalować IIS lub Apache i silnik PHP. Skonfigurowany silnik PHP znajduje się w katalogu systemu w folderze Install. Należy go rozpakować na dysk C:\ i utworzyć zmienną PATCH do c:\php.
+2.	Wgrać do katalogu htdocs (Apache) lub IIS (wwwroot) katalog z systemem (w IIS najlepiej utworzyć nową stronę na innym porcie).
+3.	Udzielić dostępu do zapisu katalogom: logs oraz tmp (jeśli jest bład zapisu, usunąć zawartość tych katalogów – pozostawić tylko plik empty).
+4.	Utworzyć na MS SQL Server (gdzie znajduje się baza bpod użytkownika z hasłem, który ma dostęp do tej bazy – read, write). Zmodyfikować konfigurację połaczenia do bazy danych Biura Podawczego Currenda w pliku baza.php (katalog Config).
+5.	Jeśli system nie zadziała, ze względu na brak połączenia, zainstalować sterowniki MS SQL Server (msodbcsql_17.2.0.1_x64) – plik jest w katalogu Install.
+6.	Uruchomić system wpisując do preglądarki adres.
+7.	Jeśli konieczne jest zabezpieczenie programu – np. hasłem, zmodyfiować plik .htaccess lub web.config, włączając prostą autoryzację.
