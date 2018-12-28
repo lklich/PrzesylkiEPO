@@ -12,7 +12,7 @@ Licencja:
 Niniejszy system jest darmowy – także do użytku komercyjnego.
 
 Użyte technologie:
-•	Framework CakePHP 3 wersja 3.6.11 Red Velvet. 
+•	Framework CakePHP 3 wersja 3.6.11 Red Velvet <- należy pobrać wersję frameworka z cakephp.com (composer install) 
 •	Sterownik serwera baz danych - MS SQL Server - biuro podawcze SAWA.
 
 Zakładka EPO
@@ -22,8 +22,12 @@ Wycofaj EPO powoduje wyłącznie paczki i odpięcie od niej przypiętych wysyłe
 Zawartość epo pokazuje przesyłki, które zostały przypięte do paczki EPO. Dodatkowo system kontroluje poprawność danych i jeśli znajdzie błąd, dodaje dodatkowy wiersz z prawdopodobnym błędem.
  
 Z poziomu zawartość można również wycofać przesyłki EPO.
+
 Zakładka Książka
-Moduł książka służy do wyszukiwania przesyłek po wpisaniu doku lub numeru przesyłki. Po odnalezieniu przesyłki, można wycowć epo, lub przejść do właściwej paczki EPO. Uwaga – system wyszukuje tylko przesyłki niewysłane. Dodatkowo, jeśli przesyłka nie posiada dowiązania do paczki EPO, z prawej strony wyświetli się napis: Brak EPO (zamiast linku do EPO) 
+Moduł książka służy do wyszukiwania przesyłek po wpisaniu doku lub numeru przesyłki. 
+Po odnalezieniu przesyłki, można wycowć epo, lub przejść do właściwej paczki EPO. 
+Uwaga – system wyszukuje tylko przesyłki niewysłane. 
+Dodatkowo, jeśli przesyłka nie posiada dowiązania do paczki EPO, z prawej strony wyświetli się napis: Brak EPO (zamiast linku do EPO) 
  
 Wycofywanie EPO jest zawsze potwierdzane oknem dialogowym, aby wykluczyć przypadkowe usunięcie dowiązań przesyłek do EPO.
  
